@@ -4,6 +4,8 @@ import { capitalize } from "./capitalize";
 
 import { calculator } from "./calculator";
 
+import { caesarCipher } from "./caesar-cipher";
+
 test("Adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
 });
@@ -30,4 +32,14 @@ test("Performs multiplication", () => {
 
 test("Performs division", () => {
   expect(calculator.divide(8, 4)).toBe(2);
+});
+
+// Caesar Cipher
+
+test("Shifts lower-case string, no spaces", () => {
+  expect(caesarCipher("cowboy")).toBe("dpxcpz");
+});
+
+test("Shifts lower-case string with spaces", () => {
+  expect(caesarCipher("cow boy")).toBe("dpx cpz");
 });
