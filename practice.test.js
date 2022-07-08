@@ -6,40 +6,50 @@ import { calculator } from "./calculator";
 
 import { caesarCipher } from "./caesar-cipher";
 
-test("Adds 1 + 2 to equal 3", () => {
+test.skip("Adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
 });
 
 // Capitalize
 
-test("Capitalizes the first letter", () => {
+test.skip("Capitalizes the first letter", () => {
   expect(capitalize("hey")).toBe("Hey");
 });
 
 // Calculator
 
-test("Performs addition", () => {
+test.skip("Performs addition", () => {
   expect(calculator.add(2, 2)).toBe(4);
 });
 
-test("Performs subtraction", () => {
+test.skip("Performs subtraction", () => {
   expect(calculator.subtract(2, 3)).toBe(-1);
 });
 
-test("Performs multiplication", () => {
+test.skip("Performs multiplication", () => {
   expect(calculator.multiply(2, 4.3)).toBeCloseTo(8.6);
 });
 
-test("Performs division", () => {
+test.skip("Performs division", () => {
   expect(calculator.divide(8, 4)).toBe(2);
 });
 
 // Caesar Cipher
 
-test("Shifts lower-case string, no spaces", () => {
+test.skip("Shifts lower-case string, no spaces", () => {
   expect(caesarCipher("cowboy")).toBe("dpxcpz");
 });
 
-test("Shifts lower-case string with spaces", () => {
+test.skip("Shifts lower-case string with spaces", () => {
   expect(caesarCipher("cow boy")).toBe("dpx cpz");
 });
+
+test.skip("Shifts upper-case letters correctly", () => {
+  expect(caesarCipher("Cow Boy")).toBe("Dpx Cpz");
+});
+
+test.skip("Shifts z to a, Z to A", () => {
+  expect(caesarCipher("zZ")).toBe("aA");
+});
+
+// Analyze Array
