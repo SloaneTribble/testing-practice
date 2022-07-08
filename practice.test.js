@@ -8,6 +8,8 @@ import { caesarCipher } from "./caesar-cipher";
 
 import { analyzeArray } from "./analyze-array";
 
+import { reverseString } from "./reverse-string";
+
 test.skip("Adds 1 + 2 to equal 3", () => {
   expect(sum(1, 2)).toBe(3);
 });
@@ -56,26 +58,42 @@ test.skip("Shifts z to a, Z to A", () => {
 
 // Analyze Array
 
-test("Returns object with average of array's numbers", () => {
+test.skip("Returns object with average of array's numbers", () => {
   const analyzedArray = analyzeArray([1, 2, 3]);
 
   expect(analyzedArray.average).toBe(2);
 });
 
-test("Returns object with min. of array's numbers", () => {
+test.skip("Returns object with min. of array's numbers", () => {
   const analyzedArray = analyzeArray([8, 10, 2]);
 
   expect(analyzedArray.min).toBe(2);
 });
 
-test("Returns object with max. of array's numbers", () => {
+test.skip("Returns object with max. of array's numbers", () => {
   const analyzedArray = analyzeArray([8, 10, 2]);
 
   expect(analyzedArray.max).toBe(10);
 });
 
-test("Returns object with length of array", () => {
+test.skip("Returns object with length of array", () => {
   const analyzedArray = analyzeArray([1, 2, 3]);
 
   expect(analyzedArray.arrayLength).toBe(3);
+});
+
+test("Reverses a string with no spaces", () => {
+  expect(reverseString("Sloane")).toBe("enaolS");
+});
+
+test("Reverses a string with odd number of chars", () => {
+  expect(reverseString("Sloaner")).toBe("renaolS");
+});
+
+test("Reverses a string with spaces", () => {
+  expect(reverseString("Me cool")).toBe("looc eM");
+});
+
+test("Reverses a string with spaces and punctuation", () => {
+  expect(reverseString("Me cool!")).toBe("!looc eM");
 });
